@@ -32,6 +32,19 @@ printMessage(message, className) {
         addExpenseForm.reset();
     }, 3000);
 }
+addExpenseToList(name, amount) {
+    const expensesList = document.querySelector('#expenses ul');
+
+    const li = document.createElement('li');
+    li.className = "list-group-item d-flex justify-content-between align-items-center";
+    // Create template
+    li.innerHTML = `
+    ${name}
+    <span class="badge badge-primary badge-pill">$ ${amount}</span>
+    `;
+    // insert into html
+    expensesList.appendChild(li);
+}
 
 }
 
@@ -82,7 +95,8 @@ function eventListeners() {
                     html.printMessage('There was error, all the fields are mandatory',
                     'alert-danger');
             } else {
-                console.log('Correct');
+                // Add expenses into list
+                html.addExpenseToList(expenseName, amount);
             }
         });
 
