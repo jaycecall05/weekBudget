@@ -6,7 +6,7 @@
 
 
 // Variables
-const addExpeenseForm = document.querySelector('#add-expense');
+const addExpenseForm = document.querySelector('#add-expense');
 
 
 
@@ -18,7 +18,7 @@ eventListeners();
 function eventListeners() {
 
 
-        addExpeenseForm.eventListeners('submit', function(e) {
+        addExpenseForm.eventListeners('submit', function(e) {
             e.preventDefault();
         });
 }
